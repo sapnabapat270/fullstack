@@ -5,6 +5,7 @@ import webpackMiddleware from 'webpack-dev-middleware';
 import webpackConfig from '../webpack.config.dev';
 import users from './routes/users';
 import auth from './routes/auth';
+import articles from './routes/articles';
 import bodyParser from 'body-parser';
 
 let app=express();
@@ -12,6 +13,7 @@ let app=express();
 app.use(bodyParser.json())
 app.use('/api/users',users);
 app.use('/api/auth',auth);
+app.use('/api/articles',articles);
 
 app.use(webpackMiddleware(webpack(webpackConfig)));
 

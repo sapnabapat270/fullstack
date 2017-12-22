@@ -16,7 +16,7 @@ router.post('/',(req,res)=>{
             console.log("valid creds");
 
                 const token=jwt.sign({
-                    id:"fsadfasdfsadf",
+                    id:"1",
                     username:req.body.identifier
                 },config.jwtSecret);
 
