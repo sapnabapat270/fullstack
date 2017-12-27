@@ -1,3 +1,5 @@
 export default {
-    jwtSecret:'somesecretkeyforjsonwebtoken'
+    jwtSecretSapna:'somesecretkeyforjsonwebtokensapna',
+    jwtSecretNiki:'somesecretkeyforjsonwebtokenniki'
+
 }

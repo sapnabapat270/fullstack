@@ -8,6 +8,7 @@ import Articles from './components/articles/Articles';
 import EditArticle from './components/articles/EditArticle';
 import Settings from './components/settings/Settings';
 import Profile from './components/profile/Profile';
+import FileUpload from './components/fileUpload/FileUpload';
 
 export default (
     <Route path="/" component={App}>
@@ -18,5 +19,6 @@ export default (
         <Route path="editArticle" component={EditArticle}/>
         <Route path="settings" component={Settings}/>
         <Route path="profile" component={Profile}/>
+        <Route path="fileUpload" component={FileUpload}/>
     </Route>
 )

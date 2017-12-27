@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaGroup from '../common/TextAreaGroup';
 import {addFlashMessage} from "../../actions/flashMessages";
@@ -31,7 +32,7 @@ class EditArticle extends React.Component{
         if(this.isValid()){
             this.setState({errors:{},isLoading:true});
 
-            addArticleRequest(this.state).then(
+            this.props.addArticleRequest(this.state).then(
                 () => {
                     console.log("article added");
                     this.props.addFlashMessage({
@@ -85,9 +86,13 @@ class EditArticle extends React.Component{
     }
 }
 
+EditArticle.propTypes={
+    addArticleRequest:React.PropTypes.func.isRequired
+}
 
 EditArticle.contextTypes={
     router:React.PropTypes.object.isRequired
 }
 
-export default EditArticle;
+
+export default connect(null,{addArticleRequest,addFlashMessage})(EditArticle);

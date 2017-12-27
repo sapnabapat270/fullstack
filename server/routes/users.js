@@ -4,7 +4,18 @@ import validateInput from '../shared/validations/signup';
 
 let router=express.Router();
 
-export let users=[];
+export let users=[{
+    username:'sapna',
+    email:'sapna@gmail.com',
+    password:'sapna',
+    confirmPassword:'sapna',
+},{
+    username:'niki',
+    email:'niki@gmail.com',
+    password:'niki',
+    confirmPassword:'niki',
+}
+];
 
 
 router.post('/',(req,res)=>{

@@ -17,6 +17,7 @@ class NavigationBar extends React.Component{
             <ul className="nav navbar-nav navbar-right">
                 <li><Link to="/signup">Sign up</Link></li>
                 <li><Link to="/login">Login</Link></li>
+                <li><Link to="/fileUpload">File Upload</Link></li>
             </ul>
         );
 

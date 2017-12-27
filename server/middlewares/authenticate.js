@@ -1,6 +1,8 @@
 import jwt from 'jsonwebtoken';
+import config from '../config';
 
 export default (req,res,next)=>{
+    console.log("in authentication");
     const authorizationHeader=req.headers['authorization'];
 
     let token;
@@ -9,15 +11,18 @@ export default (req,res,next)=>{
     }
 
     if(token){
-        jwt.verify(token,config.jwtSecret,(err,decoded)=>{
+        jwt.verify(token,config.jwtSecretSapna,(err,decoded)=>{
             if(err){
                 res.status(401).json({error:'Failed to authenticate'});
+            }else{
+                req.body.id=1;
+                next();
             }
         });
 
     }else{
         res.status(403).json({
-           error:'No token provided'
+           errors:'No token provided'
         });
     }
 }
